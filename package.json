@@ -1,0 +1,54 @@
+{
+  "name": "with-fileserver",
+  "description": "FileServer context manager",
+  "author": "Jarid Margolin <jaridmargolin@gmail.com>",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jaridmargolin/with-fileserver",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaridmargolin/with-fileserver"
+  },
+  "bugs": {
+    "url": "https://github.com/jaridmargolin/with-fileserver/issues"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "coverage": "nyc --reporter=lcov --reporter=text npm test",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "format": "prettier-eslint --write \"**/*.js\"",
+    "lint": "eslint \"**/*.js\"",
+    "test": "npm run lint && mocha"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm test"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run format",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "serve-handler": "^6.0.1"
+  },
+  "devDependencies": {
+    "chai": "4.2.0",
+    "coveralls": "3.0.4",
+    "eslint": "5.8.0",
+    "eslint-config-standard": "12.0.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-node": "8.0.1",
+    "eslint-plugin-promise": "4.0.1",
+    "eslint-plugin-standard": "4.0.0",
+    "husky": "2.4.0",
+    "lint-staged": "8.2.0",
+    "mocha": "6.1.4",
+    "nyc": "14.1.1",
+    "prettier-eslint-cli": "4.7.1",
+    "request": "2.88.0",
+    "request-promise-native": "1.0.7"
+  }
+}
