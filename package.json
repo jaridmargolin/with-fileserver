@@ -49,6 +49,6 @@
     "nyc": "14.1.1",
     "prettier-eslint-cli": "4.7.1",
     "request": "2.88.0",
-    "request-promise-native": "1.0.7"
+    "request-promise-native": "1.0.9"
   }
 }
